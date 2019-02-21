@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html ng-app='customServiceApp'>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+        <script src='js/customdirective.js'></script>
+    </head>
+    <body>
+        <h1>Custom Directive</h1>  
+        <div ng-controller='ShoppingListAddController as list'>
+            <input type='text' ng-model='list.itemName' placeholder="item name">
+            <input type='text' ng-model='list.itemQuantity' placeholder="Quantity">
+            <button ng-click='list.addItem();'>Add Item</button>
+        </div>  
+        <div ng-controller='ShoppingListShowController as showList'>
+            <ol>
+                <list-item></list-item>
+            </ol>
+        </div>
+    </body>
+</html>

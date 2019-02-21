@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html ng-app='wc'>
+    <head>
+        <meta charset='utf-8'>
+        <script src="angular.min.js"></script>
+        <script src='js/watchercount.js'></script>
+        <script src='js/customdirective.js'></script>
+    </head>
+    <body>
+        <div ng-controller='watcherController'>
+        <h1>Watcher Count</h1>    
+        <button ng-click='countNumberOfWatchers();'>Watcher Count</button>
+        </div>
+
+        <div ng-controller='shoppingListController'>
+            <input type='text' ng-model='search'></input>
+            <h2>Shopping List 1</h2>
+            <ul>
+                <li ng-repeat='item in shoppingList1 | filter:search'>{{item}}</li>
+            </ul>
+
+            <h2>Shopping List 2</h2>
+            <ul>
+                <li ng-repeat='item in shoppingList2'>{{$index+1}}. Buy {{item.quantity}} of {{item.name}}(s)</li>
+            </ul>
+
+            <h2>Add new items</h2>
+            <input type='text' placeholder='newIteminList' ng-model='newItem'></input>
+            <input type='text' placeholder='newQuantityinList' ng-model='newQuantity'></input>
+            <button ng-click='addItems()'>Add to list</button>
+        </div>
+    </body>
+</html>
