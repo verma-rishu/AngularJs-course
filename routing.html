@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html ng-app='routingapp'>
+    <head>
+        <meta charset='utf-8'>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+        *{
+            box-sizing:border-box;
+            margin:0px;
+            padding:0px;
+        }
+        .tabsdiv{
+            display: flex;
+            flex-wrap: wrap;
+            font-family: 'Indie Flower', cursive;
+            background-color: grey;
+            width:100%;
+            padding:5px;
+            overflow: hidden;
+        }
+        #tabs{
+            border-radius: 5px;
+            color:black;
+            padding:1%;
+            width:10%;
+            float: left;
+            text-decoration: none;
+            /* overflow: hidden; */
+        }
+        #tabs:hover{
+            border-radius: 5px;
+            color: black;
+            margin:0px;
+            padding:1%;
+            float: left;
+            text-decoration: none;
+            background-color: palevioletred;
+            /* overflow: hidden; */
+        }
+        .activeTab{
+            color: black;
+            background-color: palevioletred;
+        }
+    </style>
+    </head>
+    <body>
+        <div class='tabsdiv'>
+                <div id='tabs' ui-sref='home' ui-sref-active='activeTab'>Home</div>
+                <div id='tabs' ui-sref='contacts' ui-sref-active='activeTab'>Contacts</div>
+                <div id='tabs' ui-sref='search' ui-sref-active='activeTab'>Search</div>
+        </div>  
+        <br/>
+        <ui-view></ui-view>
+
+    </body>
+    <script src="angular.min.js"></script>
+        <script src="angular-ui-router.min.js"></script>
+        <script src='js/routingapp.js'></script>
+</html>
