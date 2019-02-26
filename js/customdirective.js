@@ -20,7 +20,7 @@
         }
     ];
 
-    angular.module('customServiceApp',[])
+    angular.module('customDirectiveApp',[])
     .controller('ShoppingListAddController',ShoppingListAddController)
     .controller('ShoppingListShowController',ShoppingListShowController)
     .service('ShoppingListService',ShoppingListService)

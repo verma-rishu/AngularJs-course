@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html ng-app='customServiceApp'>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+        <script src='js/asyncPromises.js'></script>
+    </head>
+    <body>
+        <h1>Promises</h1>  
+        <div ng-controller='ShoppingListController as List'>
+            <input type='text' ng-model='List.itemName' placeholder="item name">
+            <input type='text' ng-model='List.itemQuantity' placeholder="Quantity">
+            <button ng-click='List.addItem();'>Add Item</button>
+            <ol>
+                <li ng-repeat='item in List.items'>{{item.quantity}} boxes of {{item.name}}
+                <button ng-click='List.removeItem($index);'>Remove Item</button></li>
+            </ol>
+        </div>
+    </body>
+</html>

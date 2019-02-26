@@ -1,25 +1,5 @@
 (function(){
     'use strict';
-    var shoppingList1=['Milk','chocolate','peanut butter','pepto bismol','frappe','shake','milkcake','milkcookies'];
-    var shoppingList2=[
-        {
-            name:'Milk',
-            quantity:'2'
-        },
-        {
-            name:'Donuts',
-            quantity:'200'
-        },
-        {
-            name:'Cookies',
-            quantity:'50'
-        },
-        {
-            name:'Chocolate',
-            quantity:'3'
-        }
-    ];
-
     angular.module('customServiceApp',[])
     .controller('ShoppingListAddController',ShoppingListAddController)
     .controller('ShoppingListShowController',ShoppingListShowController)

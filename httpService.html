@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html ng-app='httpServiceApp'>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src='js/httpService.js'></script>
+</head>
+
+<body>
+    <h1>$http Service</h1>
+    <div ng-controller='httpServiceController as menu'>
+        <table border=1>
+            <!-- <li ng-repeat='catagory in menu.catagories'>Id = {{catagory.id}}, name= {{catagory.name}}, Special_Instructions = `{{catagory.special_instructions}}===''?N/A:{{catagory.special_instructions}}`</li> -->
+            <tr>
+                <td style="width:20px">Id</td>
+                <td>Name</td>
+                <td>Special Instructions</td>
+                <td>Remove Items</td>
+            </tr>
+            <tr ng-repeat='category in menu.categories'>
+                <td style="width:20px">{{category.id}} (<a href=""
+                        ng-click="menu.logCategoryMenu(category.short_name)">{{category.short_name}}</a>)</td>
+                <td>{{category.name}}</td>
+                <td>{{category.special_instructions}}</td>
+                <td><button ng-click="menu.removeItems($index)">Remove Item</button></td>
+            </tr>
+            <tr>
+                <td>Category Data</td>
+                <td>{{menu.data}}</td>
+            </tr>
+            <label for='name'>Name</label>
+            <input type="text" ng-model='menu.name' placeholder="Enter your name">
+            <label for='name'>job</label>
+            <select ng-model='menu.job'>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Software Developer">Software Developer</option>
+                <option value="IT professional">IT professional</option>
+                <option value="Intern ">Intern</option>
+            </select>
+            <button ng-click='menu.postcheck();'>Click me to post job</button>
+        </table>
+        <label for='image'>Upload an image</label>
+        <input type="file" ng-model="menu.image"></input>
+        <button ng-click='menu.uploadimage();'>Upload Image</button>
+    </div>
+    </body>
+</html>
